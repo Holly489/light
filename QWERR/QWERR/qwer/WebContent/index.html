@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jQuery.js"></script>
+    <title>LIGHT|阅读温暖</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo">
+            <a href="http://106.15.94.131/qwer/index.html">LIGHT</a>
+        </div>
+        <nav>
+            <form class="search" action="">
+                <input name="q" placeholder="搜索" type="search">
+            </form>
+            <ul>
+                <li class="from-center">
+                    <a href="javascript:void(0);">首页</a>
+                </li>
+                <li class="from-center">
+                    <a href="html/book.html">书库</a>
+                </li>
+                <li class="dropdown from-center">
+                    <a href="javascript:void(0);" class="other">阅读</a>
+                    <ul>
+                        <li><a href="html/movie.html">影评/书评</a></li>
+                        <li><a href="html/markdown.html">创作</a></li>
+                    </ul>
+                </li>
+                <li class="from-center">
+                    <a href="javascript:void(0);">下载</a>
+                </li>
+                <li class="dropdown from-center">
+                    <a href="html/login.html" class="to__login__register" target="_blank">登录/注册</a>
+                    <ul>
+                        <li><a href="/qwer/user/exit">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="slider-container">
+        <div class="slider-control left inactive"></div>
+        <div class="slider-control right"></div>
+        <ul class="slider-pagi"></ul>
+        <div class="slider">
+            <div class="slide slide-0 active">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                        <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading"></h2>
+                        <p class="slide__text-desc">
+                        </p>
+                        <a class="slide__text-link outline-out">点击查看</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-1 ">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                        <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading"></h2>
+                        <p class="slide__text-desc"></p>
+                        <a class="slide__text-link outline-out">点击查看</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-2">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                        <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text">
+                        <h2 class="slide__text-heading"></h2>
+                        <p class="slide__text-desc"></p>
+                        <a class="slide__text-link outline-out">点击查看</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide slide-3">
+                <div class="slide__bg"></div>
+                <div class="slide__content">
+                    <svg class="slide__overlay" viewBox="0 0 720 405" preserveAspectRatio="xMaxYMax slice">
+                        <path class="slide__overlay-path" d="M0,0 150,0 500,405 0,405" />
+                    </svg>
+                    <div class="slide__text"></h2>
+                        <p class="slide__text-desc"></p>
+                        <a class="slide__text-link outline-out">点击查看</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="the__title">
+        <span class="rec__title">每日推荐</span>
+    </div>
+    <!-- <div class="recommend">
+        <div class="container">
+            <div class="item-list">
+                <div class="item item-1">
+                    <div class="img">
+                        <a href="javascript:;">
+                            <div class="like">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="img__link">
+                            <div class="img-content img1"></div>
+                        </a>
+                    </div>
+                    <div class="social"><a href="javascript:;">
+                            <div class="social__1"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__2"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__3"><i></i></div>
+                        </a></div>
+                    <div class="text-container">
+                        <h2 class="title">导读</h2>
+                        <div class="content">
+                            <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                            </p>
+                        </div>
+                        <div class="readmore">
+                            <h3>发现更多</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item-list">
+                <div class="item item-1">
+                    <div class="img">
+                        <a href="javascript:;">
+                            <div class="like">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a><a href="javascript:;" class="img__link">
+                            <div class="img-content img2"></div>
+                        </a>
+                    </div>
+                    <div class="social"><a href="javascript:;">
+                            <div class="social__1"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__2"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__3"><i></i></div>
+                        </a></div>
+                    <div class="text-container">
+                        <h2 class="title">导读</h2>
+                        <div class="content">
+                            <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                            </p>
+                        </div>
+                        <div class="readmore">
+                            <h3>发现更多</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item-list">
+                <div class="item item-1">
+                    <div class="img"><a href="javascript:;">
+                            <div class="like"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="img__link">
+                            <div class="img-content img3"></div>
+                        </a>
+                    </div>
+                    <div class="social"><a href="javascript:;">
+                            <div class="social__1"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__2"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__3"><i></i></div>
+                        </a></div>
+                    <div class="text-container">
+                        <h2 class="title">导读</h2>
+                        <div class="content">
+                            <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+
+                            </p>
+                        </div>
+                        <div class="readmore">
+                            <h3>发现更多</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="item-list">
+                <div class="item item-1">
+                    <div class="img"><a href="javascript:;">
+                            <div class="like"><svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="javascript:;" class="img__link">
+                            <div class="img-content img4"></div>
+                        </a>
+                    </div>
+                    <div class="social"><a href="javascript:;">
+                            <div class="social__1"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__2"><i></i></div>
+                        </a><a href="javascript:;">
+                            <div class="social__3"><i></i></div>
+                        </a></div>
+                    <div class="text-container">
+                        <h2 class="title">导读</h2>
+                        <div class="content">
+                            <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                            </p>
+                        </div>
+                        <div class="readmore">
+                            <h3>发现更多</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="rec">
+        <div class="rec__item">
+            <a href="javascript:void(0);" class="rec__link">
+                <div class="rec__img">
+                    <img src="img/bg1.jpg" alt="" class="rec-img">
+                </div>
+                <div class="rec__con">
+                    <div class="rec__name">书本名</div>
+                    <div class="rec__writer">作者</div>
+                    <div class="rec__info">Bow Down: Lianne La Havas on Frida Kahlo </div>
+                </div>
+            </a>
+        </div>
+        <div class="rec__item rec1">
+            <a href="javascript:void(0);" class="rec__link">
+                <div class="rec__img1">
+                    <img src="img/bg1.jpg" alt="" class="rec-img">
+                </div>
+                <div class="rec__con1">
+                    <div class="rec__name name1">作者</div>
+                    <div class="rec__writer">作者</div>
+                    <div class="rec__info">Bow Down: Lianne La Havas on Frida Kahlo </div>
+                </div>
+            </a>
+        </div>
+        <div class="rec__item">
+            <a href="javascript:void(0);" class="rec__link">
+                <div class="rec__img">
+                    <img src="img/bg1.jpg" alt="" class="rec-img">
+                </div>
+                <div class="rec__con">
+                    <div class="rec__name">作者</div>
+                    <div class="rec__writer">作者</div>
+                    <div class="rec__info">Bow Down: Lianne La Havas on Frida Kahlo </div>
+                </div>
+            </a>
+        </div>
+        <div class="rec__item rec1">
+            <a href="javascript:void(0);" class="rec__link">
+                <div class="rec__img1">
+                    <img src="img/bg1.jpg" alt="" class="rec-img">
+                </div>
+                <div class="rec__con1">
+                    <div class="rec__name name1">作者</div>
+                    <div class="rec__writer">作者</div>
+                    <div class="rec__info">Bow Down: Lianne La Havas on Frida Kahlo </div>
+                </div>
+            </a>
+        </div>
+    </div>
+<!-- 
+    <div class="the__title">
+        <span class="rec__title">历史记录</span>
+    </div>
+    <div class="history">
+        <a href="javascript:void(0);" class="history_1">无</a>
+        <a href="javascript:void(0);" class="history_1">历史记录</a>
+    </div>
+ -->
+  <div class="the__title">
+        <span class="rec__title">往期精选</span>
+    </div>
+    <div class="mask">
+        <span class="btn_l btn">&lt;</span>
+        <span class="btn_r btn">&gt;</span>
+        <div class="recommend">
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img1"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img2"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img3"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img4"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img1"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img2"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img3"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="item-list">
+                    <div class="item item-1">
+                        <div class="img">
+
+                            <a href="javascript:;" class="img__link">
+                                <div class="img-content img4"></div>
+                            </a>
+                        </div>
+
+                        <div class="text-container">
+                            <h2 class="title">简介</h2>
+                            <div class="content">
+                                <p>病毒跨越国界，全球疫情持续高烧，影响几乎波及所有国家。全球范围从报告首个病例到第10万个病例经历67天，从10万到20万经历11天，从20万到30万，仅仅相隔4天，从30万到40万仅用3天，病毒在以迅雷不及掩耳之势蔓延
+                                </p>
+                            </div>
+                            <div class="readmore">
+                                <h3>发现更多</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="download">
+        <div class="dl_list">
+            <a class="item" target="_blank" href="javascript:void(0);">
+                <svg class="svg_icon" viewBox="0 0 50 50" width="50" height="50">
+                    <path
+                        d="M34 3h-18c-1.657 0-3 1.343-3 3v38c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3v-38c0-1.657-1.343-3-3-3zm1 38h-20v-32h20v32z">
+                    </path>
+                </svg>
+                <span class="text_icon">手机版</span>
+            </a>
+
+            <a class="item" target="_blank" href="javascript:void(0);">
+                <svg class="svg_icon" viewBox="0 0 50 50" width="50" height="50">
+                    <path
+                        d="M7 23.977l13.282-.176v-14.384l-13.282 2.286v12.274zm15.953-15.02v14.809l20.047-.266v-17.993l-20.047 3.45zm-15.953 29.339l13.282 2.286v-14.383l-13.282-.176v12.273zm15.953 2.746l20.047 3.451v-17.994l-20.047-.265v14.808z">
+                    </path>
+                </svg>
+                <span class="text_icon">Windows版</span>
+            </a>
+
+            <a class="item" target="_blank" href="javascript:void(0);">
+                <svg class="svg_icon" viewBox="0 0 50 50" width="50" height="50">
+                    <path
+                        d="M42.705 17.437c-2.28-2.958-5.474-4.671-8.49-4.671-3.99 0-5.675 1.976-8.454 1.976-2.85 0-5.022-1.964-8.478-1.964-3.384 0-6.993 2.143-9.285 5.796-3.218 5.15-2.672 14.85 2.541 23.114 1.864 2.958 4.358 6.275 7.623 6.312h.06c2.838 0 3.681-1.928 7.587-1.952h.06c3.847 0 4.619 1.94 7.445 1.94h.059c3.265-.036 5.889-3.713 7.753-6.659 1.342-2.12 1.84-3.185 2.873-5.581-7.54-2.97-8.751-14.059-1.294-18.311zm-18.155-4.371c2.529 0 5.118-1.581 6.625-3.605 1.461-1.928 2.565-4.658 2.162-7.461-2.375.168-5.141 1.736-6.768 3.784-1.472 1.856-2.683 4.611-2.208 7.282h.189z">
+                    </path>
+                </svg>
+                <span class="text_icon">Mac版</span>
+            </a>
+
+            <a class="item" target="_blank" href="javascript:void(0);">
+                <svg class="svg_icon" viewBox="0 0 50 50" width="50" height="50">
+                    <path
+                        d="M46 8h-42c-1.657 0-3 1.343-3 3v28c0 1.657 1.343 3 3 3h42c1.657 0 3-1.343 3-3v-28c0-1.657-1.343-3-3-3zm-2 32h-38v-30h38v30z">
+                    </path>
+                </svg>
+                <span class="text_icon">iPad版</span>
+            </a>
+
+
+
+        </div>
+    </div>
+
+    <script src="js/index/slider.js"></script>
+    <script src="js/index/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/editormd.min.css" />
+    <script src="../js/jQuery.js"></script>
+    <script src="../js/editormd.min.js"></script>
+    <style>
+        #header {
+            top: 0;
+        }
+
+        .main {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .main span {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .main input {
+            width: 300px;
+            padding: 6px 11px;
+        }
+
+        .save {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .saveBtn {
+            padding: 8px 16px;
+            background-color: #1e262d;
+            color: white;
+            border-radius: 8px;
+            border: 0;
+            outline: 0;
+        }
+
+        .saveBtn:hover {
+            background-color: #3d4f5f;
+        }
+
+        .line {
+            width: 600px;
+            height: 300px;
+            resize: none;
+        }
+
+        .sel {
+            width: 160px;
+            height: 30px;
+            font-size: 18px;
+        }
+    </style>
+    <title>LIGHT|创作</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo">
+            <a href="http://106.15.94.131/qwer/index.html">LIGHT</a>
+        </div>
+        <nav>
+            <form class="search" action="">
+                <input name="q" placeholder="搜索" type="search">
+            </form>
+            <ul>
+                <li class="from-center">
+                    <a href="http://106.15.94.131/qwer/index.html">首页</a>
+                </li>
+                <li class="from-center">
+                    <a href="book.html">书库</a>
+                </li>
+                <li class="dropdown from-center">
+                    <a href="javascript:void(0);" class="other">阅读</a>
+                    <ul>
+                        <li><a href="movie.html">影评/书评</a></li>
+                        <li><a href="markdown.html">创作</a></li>
+                    </ul>
+                </li>
+                <li class="from-center">
+                    <a href="javascript:void(0);">下载</a>
+                </li>
+                <li class="dropdown from-center">
+                    <a href="login.html" class="to__login__register" target="_blank">登录/注册</a>
+                    <ul>
+                        <li><a href="/qwer/user/exit">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div style="margin-top: 120px"></div>
+    <div id="layout">
+        <div class="main">
+            <span>标题</span>
+            <input type="text" placeholder="请输入标题" class="title">
+        </div>
+        <div class="main">
+            <span>作者</span>
+            <input type="text" placeholder="请输入作者" class="writer">
+        </div>
+        <div class="main">
+            <span>图片路径</span>
+            <input type="text" placeholder="请输入路径" class="url">
+        </div>
+        <div class="main">
+            <span>概要</span>
+            <textarea name="" id="" cols="30" rows="10" class="line"></textarea>
+        </div>
+        <div class="main">
+            <span>类型</span>
+            <select name="sel" class="sel">
+                <option>书本</option>
+                <option>影评或时评</option>
+            </select>
+        </div>
+
+        <div class="main">
+            <span>文章主体</span>
+        </div>
+        <div id="test-editormd">
+            <textarea style="display:none;"></textarea>
+        </div>
+    </div>
+    <div class="save">
+        <button class="saveBtn">提交</button>
+    </div>
+    <script type="text/javascript">
+        var testEditor;
+        $(function () {
+            testEditor = editormd("test-editormd", {
+                width: "90%",
+                height: 640,
+                syncScrolling: "single",
+                // theme : "dark",
+                path: "../lib/", //依赖lib文件夹路径
+                //这个配置可以让构造出来的HTML代码直接在第二个隐藏的textarea域中，方便post提交表单
+                saveHTMLToTextarea: true, // 保存 HTML 到 Textarea，true表示转化为html格式的内容也同样提交到后台
+                toolbarAutoFixed: true,//工具栏自动固定定位的开启与禁用
+                imageUpload: true,
+                imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL: "",
+            });
+            $(".saveBtn").click(function () {
+                var data = $(".editormd-html-textarea").val();
+                var title = $(".title").val();
+                var writer = $(".writer").val();
+                var url = $(".url").val();
+                var line = $(".line").val();
+                var sel = $(".sel").val();
+                if (sel == "书本") {
+
+                    //书本
+                    $.ajax({
+                        data: {
+                            'book_title': title,
+                            'book_img_uri': url,
+                            'book_content': line,
+                            'book_author': writer,
+                            'data': data
+                        },
+                        dataType: 'text',
+                        type: 'post',
+                        url: 'http://106.15.94.131/qwer/book/saveBook',
+                        success: function (msg) {
+                            alert("book"+msg);
+                        }
+                    });
+                } else {
+
+                    //影评或时评
+                    $.ajax({
+                        data: {
+                            'book_title': title,
+                            'book_img_uri': url,
+                            'book_content': line,
+                            'book_author': writer,
+                            'data': data
+                        },
+                        dataType: 'text',
+                        type: 'post',
+                        url: 'http://106.15.94.131/qwer/article/saveArticle',
+                        success: function (msg) {
+                            alert("article"+msg);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
